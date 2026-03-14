@@ -8,6 +8,23 @@
 - **Flutter 版本**: 3.41.4 (stable)
 - **Dart 版本**: 3.11.1
 - **支持平台**: iOS, Android, HarmonyOS
+- **原始项目**: 基于 iOS Objective-C 项目迁移
+  - **iOS 原项目路径**: `/Users/wsy/Desktop/code/安小信/安小信iOS/SCPlatformTeacher`
+  - **迁移目标**: 将 iOS 原生项目迁移为 Flutter 多平台应用，支持 iOS、Android、HarmonyOS 三端
+
+## 开发原则
+
+### 参考原项目
+- **所有功能实现必须参考 iOS 原项目**：`/Users/wsy/Desktop/code/安小信/安小信iOS/SCPlatformTeacher`
+- 查看原项目的 UI 设计、交互逻辑、业务流程
+- 图片资源从原项目的 `Assets.xcassets` 中获取
+- 保持与原项目一致的用户体验
+
+### 多平台适配
+- 使用 Flutter 的跨平台特性，一套代码适配三端
+- 不要硬编码 iOS 的固定比例，使用 Flutter 的响应式布局
+- 使用 MediaQuery、LayoutBuilder 等工具进行屏幕适配
+- 遵循 Material Design 和各平台的设计规范
 
 ## 项目结构
 
@@ -41,6 +58,15 @@ lib/
 - `services/`: 业务逻辑和 API 调用
 - `pages/`: 完整页面组件
 - `widgets/`: 可复用的 UI 组件
+
+### 图片资源规范
+- **重要**：项目中提供的所有图片资源都是 iOS 的 2 倍图（@2x）
+- 在 Flutter 中使用图片时，需要正确处理图片分辨率
+- 建议在 `assets/images/` 目录下按照 Flutter 规范组织：
+  - `image.png` - 1x 图片
+  - `2.0x/image.png` - 2x 图片
+  - `3.0x/image.png` - 3x 图片
+- 如果只有 @2x 图片，应将其放在 `2.0x/` 子目录中，或在代码中使用时指定 scale 参数
 
 ## 环境配置
 

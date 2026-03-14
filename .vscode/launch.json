@@ -1,9 +1,21 @@
 {
-  // 使用 IntelliSense 了解相关属性。 
+  // 使用 IntelliSense 了解相关属性。
   // 悬停以查看现有属性的描述。
   // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+    {
+      "name": "iPhone 16 Pro 模拟器",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "8D1472B3-0A6D-4A20-9FA3-267171858B6C"
+    },
+    {
+      "name": "真机 (wsy)",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "00008110-000868381A05401E"
+    },
     {
       "name": "axx_flutter_multiplatform",
       "request": "launch",
